@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background: var(--bgColor) !important;
+}
+
+body {
+  background: var(--bgColor);
+  /* font-family: "Cairo", sans-serif; */
+}
+
+@layer components {
+  /* input element custom class */
+  h1 {
+    @apply text-[25px] font-extrabold;
+  }
+
+  .main-btn {
+    @apply bg-btnBgColor text-white whitespace-nowrap px-4 py-2 rounded-[3px] text-sm font-semibold uppercase hover:bg-[#4946b2] transition-all;
+  }
+
+  .input-element {
+    @apply border border-borderColor px-2 py-1 rounded-sm;
+  }
+
+  .tableText {
+    @apply text-base;
+  }
+}

@@ -100,7 +100,7 @@ export default function FlightOfferRow({
   const isLengthTwo = itineraries?.itineraries?.[0].segments?.length === 2;
 
   return (
-    <div className="relative">
+    <div key={index} className="relative">
       <TableBody
         key={index}
         index={index}

@@ -3,6 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      // @TODO Color Name
       colors: {
         bgColor: "#ffffff",
         navBgColor: "#1f2937",

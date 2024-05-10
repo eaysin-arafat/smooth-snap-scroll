@@ -1,6 +1,6 @@
 import FilterFrom from "../components/section/FilterFrom";
 import NotFound from "../components/not-found/NotFound";
-import flightsData from "../../data/data.json";
+import tripData from "../../data/data.json";
 import { useState } from "react";
 import RootLayout from "../layout/RootLayout";
 import { FlightOffersType } from "../constant/fightType";
@@ -16,9 +16,8 @@ export default function HomePage() {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
-
     // Simulate data fetching (replace with actual API call)
-    setData(flightsData);
+    setData(tripData);
   };
 
   return (

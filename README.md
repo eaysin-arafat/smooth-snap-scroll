@@ -53,20 +53,12 @@ Preview the built project:
 yarn preview
 ```
 
-### Database
-
-Run JSON server to serve mock data:
-
-```bash
-yarn db
-```
 
 ## Technologies Used
 
 - React
 - TypeScript
 - Vite
-- JSON Server
 - React Icons
 
 ## Author

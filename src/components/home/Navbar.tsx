@@ -4,14 +4,14 @@ import { GrNotification } from "react-icons/gr";
 import profileImg from "/apu.webp"; // Assuming profileImg is an image path
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenSidebar, setIsOpenSidebar] = useState(false);
 
   const handleMobileNav = () => {
-    setIsOpen(!isOpen);
+    setIsOpenSidebar(!isOpenSidebar);
   };
 
   return (
-    <nav className="section-container w-full bg-navBgColor">
+    <nav className="section-container w-full bg-navBgColor z-10">
       {/* Desktop Navbar */}
       <div className="flex md:flex-row-reverse items-center justify-between w-full py-4">
         <div className="flex items-center gap-4">
@@ -25,12 +25,12 @@ const Navbar = () => {
           </div>
           <GrNotification className="text-navTextColor" size={25} />
         </div>
-        <div className="hidden md:flex text-navTextColor text-sm gap-9 font-bold">
-          <a href="#">Dashboard</a> {/* Use href for anchors */}
-          <a href="#">Master Price</a>
-          <a href="#">Custom Price</a>
-          <a href="#">Calendar</a>
-          <a href="#">Reports</a>
+        <div className="hidden md:flex text-navTextColor text-base gap-9 font-semibold">
+          <a href="/">Dashboard</a> {/* Use href for anchors */}
+          <a href="/">Master Price</a>
+          <a href="/">Custom Price</a>
+          <a href="/">Calendar</a>
+          <a href="/">Reports</a>
         </div>
         <button onClick={handleMobileNav} className="md:hidden">
           <AiOutlineMenu className="text-white" size="2rem" />
@@ -40,11 +40,13 @@ const Navbar = () => {
       {/* Mobile Side Navbar */}
       <div className="md:hidden z-10">
         <div
-          className={`${isOpen ? "fixed left-0 top-0 w-full h-screen" : ""}`}
+          className={`${
+            isOpenSidebar ? "fixed left-0 top-0 w-full h-screen" : ""
+          }`}
         >
           <div
             className={`${
-              isOpen
+              isOpenSidebar
                 ? "fixed left-0 top-0 w-full h-screen bg-navBgColor p-10 ease-in duration-300"
                 : "fixed left-[-100%] top-0 p-10 h-screen ease-in duration-300"
             }`}
@@ -57,12 +59,12 @@ const Navbar = () => {
                 <AiOutlineClose className="text-white" />
               </button>
             </div>
-            <div className="flex flex-col space-y-4 pt-4 text-navTextColor text-sm font-bold">
-              <a href="#">Dashboard</a>
-              <a href="#">Master Price</a>
-              <a href="#">Custom Price</a>
-              <a href="#">Calendar</a>
-              <a href="#">Reports</a>
+            <div className="flex flex-col space-y-5 pt-4 text-navTextColor text-base font-semibold">
+              <a href="/">Dashboard</a>
+              <a href="/">Master Price</a>
+              <a href="/">Custom Price</a>
+              <a href="/">Calendar</a>
+              <a href="/">Reports</a>
             </div>
           </div>
         </div>

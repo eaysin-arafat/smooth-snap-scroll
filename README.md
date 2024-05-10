@@ -53,7 +53,6 @@ Preview the built project:
 yarn preview
 ```
 
-
 ## Technologies Used
 
 - React

@@ -1,8 +1,16 @@
-import TableBody from "../table/TableBody";
 import { CgBorderStyleDashed } from "react-icons/cg";
-import { FlightOffer, Itinerary, Segment } from "../../constant/fightType";
+import { FlightOffer, Itinerary, Segment } from "../../../constant/fightType";
+import TableBody from "../../table/TableBody";
 
-export default function FlightOfferRow({
+/**
+ * TableRow component represents a single row in the flight offer table.
+ * It displays information about the flight itinerary, including segments, flight numbers, seats, fares, routes, departures, arrivals, duration, and price.
+ * @param itineraries FlightOffer containing itinerary data
+ * @param index Index of the row
+ * @param length Total number of rows
+ */
+
+export default function TableRow({
   itineraries,
   index,
   length,
@@ -11,7 +19,9 @@ export default function FlightOfferRow({
   index: number;
   length?: number;
 }) {
+  // Function to render segments information
   const renderSegments = (itineraries: Itinerary[]) => {
+    // Render each segment's aircraft
     return (
       <>
         {itineraries.map((itinerary: Itinerary) =>
@@ -23,6 +33,7 @@ export default function FlightOfferRow({
     );
   };
 
+  // Function to render flight numbers
   const renderFlightNumbers = (itineraries: Itinerary[]) => {
     return (
       <>
@@ -35,6 +46,7 @@ export default function FlightOfferRow({
     );
   };
 
+  // Function to render seats information
   const renderSeats = (classes: string[]) => {
     return (
       <>
@@ -45,6 +57,7 @@ export default function FlightOfferRow({
     );
   };
 
+  // Function to render fares information
   const renderFares = (fareBasis: string[]) => {
     return (
       <>
@@ -55,6 +68,7 @@ export default function FlightOfferRow({
     );
   };
 
+  // Function to render routes information
   const renderRoutes = (itineraries: Itinerary[]) => {
     return (
       <>
@@ -69,6 +83,7 @@ export default function FlightOfferRow({
     );
   };
 
+  // Function to render departures information
   const renderDepartures = (itineraries: Itinerary[]) => {
     return (
       <>
@@ -81,6 +96,7 @@ export default function FlightOfferRow({
     );
   };
 
+  // Function to render arrivals information
   const renderArrivals = (itineraries: Itinerary[]) => {
     return (
       <>
@@ -93,35 +109,26 @@ export default function FlightOfferRow({
     );
   };
 
+  // Check if the length of segments is two
   const isLengthTwo = itineraries?.itineraries?.[0].segments?.length === 2;
 
   return (
     <div key={index} className="relative">
+      {/* TableBody component for rendering row data */}
       <TableBody
         key={index}
         index={index}
         length={length}
         data={[
-          {
-            title: renderSegments(itineraries?.itineraries || ""),
-            w: "60px",
-          },
+          // Render each column data
+          { title: renderSegments(itineraries?.itineraries || ""), w: "60px" },
           {
             title: renderFlightNumbers(itineraries?.itineraries || ""),
             w: "60px",
           },
-          {
-            title: renderSeats(itineraries?.class[0] || ""),
-            w: "50px",
-          },
-          {
-            title: renderFares(itineraries?.fareBasis[0] || ""),
-            w: "70px",
-          },
-          {
-            title: renderRoutes(itineraries?.itineraries || ""),
-            w: "80px",
-          },
+          { title: renderSeats(itineraries?.class[0] || ""), w: "50px" },
+          { title: renderFares(itineraries?.fareBasis[0] || ""), w: "70px" },
+          { title: renderRoutes(itineraries?.itineraries || ""), w: "80px" },
           {
             title: renderDepartures(itineraries?.itineraries || ""),
             w: "150px",
@@ -136,6 +143,7 @@ export default function FlightOfferRow({
             w: "80px",
           },
           {
+            // Render price with select button
             title: (
               <div className="flex flex-col items-center justify-center">
                 <p className="font-medium">{itineraries?.price}</p>
@@ -147,6 +155,7 @@ export default function FlightOfferRow({
         ]}
       />
 
+      {/* Render dashed line if the length is two */}
       {isLengthTwo && (
         <div className="h-[1px] bg-red-200 absolute bottom-1.5 w-[calc(100%-105px)]"></div>
       )}

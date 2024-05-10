@@ -1,20 +1,34 @@
-// Table Body data Type
-type Data = {
-  title: string | number | JSX.Element;
-  w: string;
-  ClassName?: string;
-};
+/**
+ * Props for the TableBody component.
+ * @property {number} index - Index of the table row.
+ * @property {string} [className] - Additional class name for styling.
+ * @property {Object[]} data - Data for rendering each cell in the table row.
+ * @property {string|number|JSX.Element} data.title - Content of each cell in the table row.
+ * @property {string} data.w - Width of each cell in the table row.
+ * @property {string} [data.ClassName] - Optional additional class name for styling individual cells.
+ * @property {number} [length] - Total length of the table rows.
+ */
 
 // Table Body component props
-type TableBodyPropType = {
+type Props = {
   index: number;
   className?: string;
-  data: Data[];
+  data: {
+    title: string | number | JSX.Element;
+    w: string;
+    ClassName?: string;
+  }[];
   length?: number;
 };
 
+/**
+ * TableBody component for rendering the body of the table.
+ * @param {Props} props - Props for the TableBody component.
+ * @returns {JSX.Element} TableBody component.
+ */
+
 // Table Body component
-function TableBody({ data, index, className = "", length }: TableBodyPropType) {
+function TableBody({ data, index, className = "", length }: Props) {
   return (
     <div
       key={index}

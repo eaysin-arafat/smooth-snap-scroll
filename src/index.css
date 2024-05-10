@@ -11,26 +11,29 @@ body {
   /* font-family: "Cairo", sans-serif; */
 }
 
+/* Custom component styles */
 @layer components {
-  /* input element custom class */
-
   h1 {
     @apply text-[25px] font-extrabold;
   }
 
+  /* Section container styles */
   .section-container {
     @apply px-3 2xl:px-64;
   }
 
+  /* Main button styles */
   .main-btn {
     @apply bg-btnBgColor text-white whitespace-nowrap px-4 py-2 rounded-[3px] text-sm font-semibold uppercase hover:bg-[#4946b2] transition-all;
   }
 
+  /* Input element styles */
   .input-element {
-    @apply border border-borderColor px-2 py-1 rounded-sm;
+    @apply border border-borderColor px-2 py-1 rounded-sm min-w-28;
   }
 
-  .tableText {
-    @apply text-base;
+  /* Border bottom styles */
+  .border-bottom {
+    @apply border-b border-divideColor;
   }
 }

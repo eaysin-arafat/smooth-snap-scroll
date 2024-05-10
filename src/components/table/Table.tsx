@@ -1,3 +1,14 @@
+/**
+ * Props for the Table component.
+ * @property {string} [className] - Additional class name for styling.
+ * @property {Object} header - Header configuration for the table.
+ * @property {string} [header.className] - Additional class name for header styling.
+ * @property {Array} header.data - Data for table headers.
+ * @property {string|JSX.Element} header.data.title - Title for each table header.
+ * @property {string} header.data.w - Width of each table header.
+ * @property {React.ReactNode} children - Child components representing the table body.
+ */
+
 type Props = {
   className?: string;
   header: {
@@ -9,6 +20,12 @@ type Props = {
   };
   children: React.ReactNode;
 };
+
+/**
+ * Table component for displaying tabular data.
+ * @param {Props} props - Props for the Table component.
+ * @returns {JSX.Element} Table component.
+ */
 
 // Table component
 const Table = ({ className, header, children }: Props) => {

@@ -8,16 +8,16 @@ This project is aimed at providing a platform for managing and displaying flight
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/eaysin-arafat/master-price-table.git
-    ```
+   ```bash
+   git clone https://github.com/eaysin-arafat/master-price-table.git
+   ```
 
 2. Install dependencies:
 
-    ```bash
-    cd master-price-table
-    yarn install
-    ```
+   ```bash
+   cd master-price-table
+   yarn install
+   ```
 
 ## Usage
 
@@ -27,18 +27,6 @@ Start the development server (default port: 5173):
 
 ```bash
 yarn dev
-```
-
-Start the JSON server (default port: 8000):
-
-```bash
-yarn db
-```
-
-Or run both development server and JSON server concurrently:
-
-```bash
-yarn start
 ```
 
 ### Build

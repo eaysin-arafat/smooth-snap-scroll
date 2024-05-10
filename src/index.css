@@ -13,8 +13,13 @@ body {
 
 @layer components {
   /* input element custom class */
+
   h1 {
     @apply text-[25px] font-extrabold;
+  }
+
+  .section-container {
+    @apply px-3 2xl:px-64;
   }
 
   .main-btn {

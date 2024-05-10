@@ -21,7 +21,7 @@ export default function MasterPriceTable({ data }: { data: FlightOffersType }) {
 
   return (
     <>
-      <p className="font-medium text-base pb-4">Data parsed successfully</p>
+      <p className="font-medium text-base pb-4">{data?.message}</p>
 
       <Table
         className="min-w-[1000px] "
@@ -30,6 +30,7 @@ export default function MasterPriceTable({ data }: { data: FlightOffersType }) {
           className: "bg-tableHeaderColor rounded-sm py-1 uppercase text-",
         }}
       >
+        {/* table body */}
         {data?.flightOffer?.map((item: FlightOffer, index: number) => (
           <FlightOfferRow
             index={index}

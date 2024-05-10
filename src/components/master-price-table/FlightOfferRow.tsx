@@ -60,7 +60,7 @@ export default function FlightOfferRow({
       <>
         {itineraries.map((itinerary: Itinerary) =>
           itinerary.segments.map((segment: Segment, index: number) => (
-            <p className="flex" key={index}>
+            <p key={index}>
               {segment.departure?.iataCode} - {segment.arrival?.iataCode}
             </p>
           ))
@@ -74,9 +74,7 @@ export default function FlightOfferRow({
       <>
         {itineraries.map((itinerary: Itinerary) =>
           itinerary.segments.map((segment: Segment, index: number) => (
-            <p className="flex" key={index}>
-              {segment.departure?.at}
-            </p>
+            <p key={index}>{segment.departure?.at}</p>
           ))
         )}
       </>
@@ -88,9 +86,7 @@ export default function FlightOfferRow({
       <>
         {itineraries.map((itinerary: Itinerary) =>
           itinerary.segments.map((segment: Segment, index: number) => (
-            <p className="flex" key={index}>
-              {segment.arrival?.at}
-            </p>
+            <p key={index}>{segment.arrival?.at}</p>
           ))
         )}
       </>

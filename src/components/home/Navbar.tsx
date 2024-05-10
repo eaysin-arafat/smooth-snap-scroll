@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-navBgColor">
+    <nav className="section-container w-full bg-navBgColor">
       {/* Desktop Navbar */}
       <div className="flex md:flex-row-reverse items-center justify-between w-full py-4">
         <div className="flex items-center gap-4">
@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Side Navbar */}
-      <div className="md:hidden">
+      <div className="md:hidden z-10">
         <div
           className={`${isOpen ? "fixed left-0 top-0 w-full h-screen" : ""}`}
         >

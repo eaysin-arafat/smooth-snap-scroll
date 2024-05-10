@@ -79,7 +79,6 @@ yarn db
 - TypeScript
 - Vite
 - JSON Server
-- Day.js
 - React Icons
 
 ## Author

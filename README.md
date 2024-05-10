@@ -9,13 +9,13 @@ This project is aimed at providing a platform for managing and displaying flight
 1. Clone the repository:
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/eaysin-arafat/master-price-table.git
     ```
 
 2. Install dependencies:
 
     ```bash
-    cd <project_directory>
+    cd master-price-table
     yarn install
     ```
 
